@@ -1,1 +1,13 @@
+.App {
+  max-width: 80vw;
+  margin: 0 auto;
+  
+}
 
+.App footer {
+  font-size: 11px;
+  margin: 10px 0;
+}
+.container {
+  margin-top: 4%;
+}

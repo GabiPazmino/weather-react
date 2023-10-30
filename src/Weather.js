@@ -17,7 +17,7 @@ export default function Weather() {
             <input
               type="submit"
               value="Search"
-              className="btn btn-primary"
+              className="btn btn-primary w-100"
             ></input>
           </div>
         </div>
@@ -27,12 +27,13 @@ export default function Weather() {
         <li>Wednesday</li>
         <li>Mostly Cloudy</li>
       </ul>
-      <div className="row">
-        <div className="col-7">
+      <div className="row mt-3">
+        <div className="col-8">
           <img src="#" alt="Mostly Cloudy" />
-          12 °C
+          <span className="temperature">12</span>{" "}
+          <span className="unit">°C</span>
         </div>
-        <div className="col-5">
+        <div className="col-4">
           <ul>
             <li>Precupitation: 15 %</li>
             <li>Humidity: 70 &</li>
