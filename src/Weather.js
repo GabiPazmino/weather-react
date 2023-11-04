@@ -9,26 +9,22 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response);
     setWeatherData({
       ready: true,
-      temperature: response.data.temperature[0].current,
-      humidity: response.data.temperature[1].humidity,
-      date: new Date(response.data.time * 1000),
-      wind: response.data.wind[0].speed,
-      description: response.data.condition[0].description,
-      icon: response.data.condition[2].icon_url,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
       city: response.data.name,
     });
   }
 
   function search() {
-    // const apiKey = "a2dda52dce059eb8a14e95aaa0db6ab7";
-    const apiKey = `5a40dfe3dd2903939dfof7704baa0cat`;
+    const apiKey = "a2dda52dce059eb8a14e95aaa0db6ab7";
 
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-
-    // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
   }
@@ -67,7 +63,7 @@ export default function Weather(props) {
 
         <WeatherInfo data={weatherData} />
 
-        <WeatherForecast city={weatherData.city} />
+        <WeatherForecast />
       </div>
     );
   } else {

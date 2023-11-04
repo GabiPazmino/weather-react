@@ -32,5 +32,12 @@ export default function WeatherIcon(props) {
     />
   );
 
- 
+  return (
+    <ReactAnimatedWeather
+      icon="CLEAR_DAY"
+      color="#1e1e1e"
+      size={64}
+      animate={true}
+    />
+  );
 }
