@@ -4,9 +4,15 @@
 }
 
 .App footer {
-  font-size: 11px;
+  font-size: 13px;
   margin: 10px 0;
+  font-weight: 630;
 }
 .container {
   margin-top: 4%;
+}
+
+footer a {
+  color: aliceblue;
+  text-decoration: none;
 }
